@@ -28,6 +28,7 @@ import {
 import './styles.css';
 
 const AUTH_STORAGE_KEY = 'olw.auth.session';
+const BACKEND_BASE_URL = 'http://207.180.223.140:9999/';
 const emptyZoneForm = { name: '', leaderName: '', leaderPhone: '' };
 const emptyMemberForm = {
   membershipNo: '',
@@ -229,7 +230,8 @@ function clearSession() {
 }
 
 async function apiRequest(path, { method = 'GET', body, token } = {}) {
-  const response = await fetch(path, {
+  const url = new URL(path, BACKEND_BASE_URL);
+  const response = await fetch(url, {
     method,
     headers: {
       Accept: 'application/json',
