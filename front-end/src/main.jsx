@@ -28,7 +28,7 @@ import {
 import './styles.css';
 
 const AUTH_STORAGE_KEY = 'olw.auth.session';
-const BACKEND_BASE_URL = 'http://207.180.223.140:9999/';
+const BACKEND_BASE_URL = import.meta.env.VITE_API_BASE_URL || window.location.origin;
 const emptyZoneForm = { name: '', leaderName: '', leaderPhone: '' };
 const emptyMemberForm = {
   membershipNo: '',
