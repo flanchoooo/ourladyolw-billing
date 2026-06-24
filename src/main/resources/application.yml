@@ -11,9 +11,9 @@ spring:
   application:
     name: parish-system
   datasource:
-    url: jdbc:mysql://${DB_HOST:localhost}:${DB_PORT:3306}/${DB_NAME:parish_system}?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
-    username: ${DB_USERNAME:root}
-    password: ${DB_PASSWORD:}
+    url: ${SPRING_DATASOURCE_URL:jdbc:mysql://207.180.223.140:3306/olw_billing?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC}
+    username: ${SPRING_DATASOURCE_USERNAME:developer}
+    password: ${SPRING_DATASOURCE_PASSWORD:ch@ng3itDev}
   jpa:
     hibernate:
       ddl-auto: none
