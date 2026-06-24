@@ -123,6 +123,14 @@ docker run -d \
   parish-system
 ```
 
+If Docker still shows old Maven or compiler errors after a dependency change, rebuild without cache:
+
+```bash
+docker build --no-cache -t parish-system .
+```
+
+If you see errors such as `variable authService not initialized in the default constructor` or `cannot find symbol: method setUsername(...)`, Lombok annotation processing is not running. This project configures Lombok explicitly in `pom.xml` for Java 25 builds.
+
 ## Seed Login
 
 The app seeds roles, a super admin user, and the default monthly contribution item:
